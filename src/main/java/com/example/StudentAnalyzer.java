@@ -3,7 +3,9 @@ package com.example;
 import java.util.List;
 
 /**
- * Lớp StudentAnalyzer chứa hàm đếm số học sinh giỏi.
+ * Lớp StudentAnalyzer chứa các hàm xử lý điểm số học sinh:
+ * - Đếm số học sinh giỏi
+ * - Tính trung bình điểm hợp lệ
  */
 public class StudentAnalyzer {
 
@@ -28,5 +30,32 @@ public class StudentAnalyzer {
             }
         }
         return count;
+    }
+
+    /**
+     * Tính điểm trung bình các giá trị hợp lệ trong danh sách điểm.
+     *
+     * Yêu cầu:
+     * - Chỉ tính điểm từ 0 đến 10.
+     * - Bỏ qua điểm null, âm hoặc lớn hơn 10.
+     * - Nếu danh sách rỗng hoặc không có điểm hợp lệ, trả về 0.0.
+     *
+     * @param scores Danh sách điểm số
+     * @return Trung bình điểm hợp lệ
+     */
+    public double calculateValidAverage(List<Double> scores) {
+        if (scores == null || scores.isEmpty()) return 0.0;
+
+        double sum = 0.0;
+        int count = 0;
+
+        for (Double score : scores) {
+            if (score != null && score >= 0 && score <= 10) {
+                sum += score;
+                count++;
+            }
+        }
+
+        return count > 0 ? sum / count : 0.0;
     }
 }
