@@ -1,116 +1,101 @@
 package com.example;
 
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
-
 import java.util.Arrays;
 import java.util.Collections;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.Test;
+
 public class StudentAnalyzerTest {
 
-    // === countExcellentStudents() tests ===
+    private final StudentAnalyzer analyzer = new StudentAnalyzer();
+
+    // === Tests for countExcellentStudents() ===
 
     @Test
-    public void testExcellentStudentExactly8() {
-        StudentAnalyzer analyzer = new StudentAnalyzer();
+    public void testExactly8Point() {
         assertEquals(1, analyzer.countExcellentStudents(Arrays.asList(8.0)));
     }
 
     @Test
-    public void testExcellentStudentAbove8() {
-        StudentAnalyzer analyzer = new StudentAnalyzer();
+    public void testAbove8Point() {
         assertEquals(1, analyzer.countExcellentStudents(Arrays.asList(9.5)));
     }
 
     @Test
-    public void testNotExcellentStudentJustBelow8() {
-        StudentAnalyzer analyzer = new StudentAnalyzer();
+    public void testJustBelow8() {
         assertEquals(0, analyzer.countExcellentStudents(Arrays.asList(7.9)));
     }
 
     @Test
-    public void testScoreZero() {
-        StudentAnalyzer analyzer = new StudentAnalyzer();
+    public void testScoreIsZero() {
         assertEquals(0, analyzer.countExcellentStudents(Arrays.asList(0.0)));
     }
 
     @Test
-    public void testScoreTen() {
-        StudentAnalyzer analyzer = new StudentAnalyzer();
+    public void testScoreIsTen() {
         assertEquals(1, analyzer.countExcellentStudents(Arrays.asList(10.0)));
     }
 
     @Test
     public void testNegativeScore() {
-        StudentAnalyzer analyzer = new StudentAnalyzer();
         assertEquals(0, analyzer.countExcellentStudents(Arrays.asList(-2.0)));
     }
 
     @Test
-    public void testScoreAboveTen() {
-        StudentAnalyzer analyzer = new StudentAnalyzer();
+    public void testScoreGreaterThanTen() {
         assertEquals(0, analyzer.countExcellentStudents(Arrays.asList(11.0)));
     }
 
     @Test
     public void testNullScore() {
-        StudentAnalyzer analyzer = new StudentAnalyzer();
         assertEquals(0, analyzer.countExcellentStudents(Arrays.asList((Double) null)));
     }
 
     @Test
-    public void testEmptyList() {
-        StudentAnalyzer analyzer = new StudentAnalyzer();
+    public void testEmptyListOfScores() {
         assertEquals(0, analyzer.countExcellentStudents(Collections.emptyList()));
     }
 
     @Test
-    public void testNullList() {
-        StudentAnalyzer analyzer = new StudentAnalyzer();
+    public void testNullListOfScores() {
         assertEquals(0, analyzer.countExcellentStudents(null));
     }
 
-    // === calculateValidAverage() tests ===
+    // === Tests for calculateValidAverage() ===
 
     @Test
-    public void testValidAverageSingleScore() {
-        StudentAnalyzer analyzer = new StudentAnalyzer();
+    public void testSingleScoreAverage() {
         assertEquals(7.5, analyzer.calculateValidAverage(Arrays.asList(7.5)), 0.01);
     }
 
     @Test
-    public void testValidAverageMultipleScores() {
-        StudentAnalyzer analyzer = new StudentAnalyzer();
+    public void testMultipleValidScoresAverage() {
         assertEquals(8.5, analyzer.calculateValidAverage(Arrays.asList(8.0, 9.0)), 0.01);
     }
 
     @Test
-    public void testAverageWithInvalidScores() {
-        StudentAnalyzer analyzer = new StudentAnalyzer();
+    public void testAverageWithInvalidIncluded() {
         assertEquals(8.0, analyzer.calculateValidAverage(Arrays.asList(8.0, -1.0, 12.0, null)), 0.01);
     }
 
     @Test
-    public void testAverageAllInvalid() {
-        StudentAnalyzer analyzer = new StudentAnalyzer();
+    public void testAverageOnlyInvalid() {
         assertEquals(0.0, analyzer.calculateValidAverage(Arrays.asList(-5.0, 15.0, null)), 0.01);
     }
 
     @Test
-    public void testAverageEmptyList() {
-        StudentAnalyzer analyzer = new StudentAnalyzer();
+    public void testAverageEmptyScoreList() {
         assertEquals(0.0, analyzer.calculateValidAverage(Collections.emptyList()), 0.01);
     }
 
     @Test
-    public void testAverageNullList() {
-        StudentAnalyzer analyzer = new StudentAnalyzer();
+    public void testAverageNullScoreList() {
         assertEquals(0.0, analyzer.calculateValidAverage(null), 0.01);
     }
 
     @Test
-    public void testAverageEdgeValues() {
-        StudentAnalyzer analyzer = new StudentAnalyzer();
+    public void testAverageWithEdgeValues() {
         assertEquals(5.0, analyzer.calculateValidAverage(Arrays.asList(0.0, 10.0)), 0.01);
     }
 }
