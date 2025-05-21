@@ -4,13 +4,39 @@
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=konanguyen&label=Profile%20views&color=0e75b6&style=flat" alt="konanguyen" /> </p>
 
-- 🌱 I’m currently learning **Python**
+- 🌱 ![I’m currently learning **Cyber Security** and exploring Java for testing and automation!](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExczM5OHUzbXYxYTNqejlmeWV3eGUwOHR0dW5sM3FxamQ0bWpxcDgxeiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/o0vwzuFwCGAFO/giphy.gif)
 
-- 👯 I’m looking to collaborate on [LGE SM7250 Kernel Source](https://github.com/konanguyen/android_kernel_lge_sm7250)
+## 🧠 Overview
 
-- 🤝 I’m looking for help with [LGE SM7250 Common Tree](https://github.com/lge-sm7250/android_device_lge_sm7250-common)
+This project provides methods to:
 
-- 📫 How to reach me **ng.hao2711@gmail.com**
+- ✅ Count the number of "Excellent" students (scores ≥ 8.0)
+- ✅ Calculate the **average of valid scores** within the inclusive range of [0.0, 10.0]
+- ✅ Perform unit testing using **JUnit 5**, following TDD principles
+
+Ensure you have the following installed on your system:
+
+- ✅ Java JDK 17 or later
+- ✅ Apache Maven
+- ✅ Git (for version control)
+- ✅ VSCode (recommended with Maven + Java extensions)
+
+## 🚀 Setup & Run
+
+1. **Clone the project**
+
+```bash
+git clone https://github.com/your-username/student-analyzer.git
+cd student-analyzer
+```
+
+Build it and test
+```bash
+mvn clean compile
+mvn test
+```
+
+
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
@@ -41,8 +67,4 @@ Here are some ideas to get you started:
 # Todoist Stats
 
 <!-- TODO-IST:START -->
-🏆  200 Karma Points           
-🌸  Completed 0 tasks today           
-✅  Completed 0 tasks so far           
-⏳  Longest streak is 0 days
 <!-- TODO-IST:END -->
