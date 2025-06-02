@@ -62,9 +62,16 @@ Here are some ideas to get you started:
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
 -->
-<!--START_SECTION:waka-->
-<!--END_SECTION:waka-->
-# Todoist Stats
+## ✅ Kiểm thử & Độ bao phủ (Code Coverage)
 
-<!-- TODO-IST:START -->
-<!-- TODO-IST:END -->
+Dự án sử dụng **JUnit 5** cho kiểm thử và **JaCoCo** để đo độ bao phủ mã nguồn.
+
+### 📦 Cài đặt
+
+JaCoCo đã được cấu hình sẵn trong `pom.xml`.
+
+### ▶️ Chạy kiểm thử và sinh báo cáo coverage
+
+```bash
+mvn clean verify
+
