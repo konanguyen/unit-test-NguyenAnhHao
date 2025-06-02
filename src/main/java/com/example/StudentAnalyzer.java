@@ -25,7 +25,7 @@ public class StudentAnalyzer {
 
         int count = 0;
         for (Double score : scores) {
-            if (score != null && score >= 0 && score <= 10 && score >= 8.0) {
+            if (isValidScore(score) && score >= 8.0) {
                 count++;
             }
         }
@@ -50,12 +50,22 @@ public class StudentAnalyzer {
         int count = 0;
 
         for (Double score : scores) {
-            if (score != null && score >= 0 && score <= 10) {
+            if (isValidScore(score)) {
                 sum += score;
                 count++;
             }
         }
 
         return count > 0 ? sum / count : 0.0;
+    }
+
+    /**
+     * Kiểm tra một điểm số có hợp lệ hay không (từ 0 đến 10, không null).
+     *
+     * @param score Điểm số cần kiểm tra
+     * @return true nếu hợp lệ, false nếu không
+     */
+    private boolean isValidScore(Double score) {
+        return score != null && score >= 0 && score <= 10;
     }
 }
